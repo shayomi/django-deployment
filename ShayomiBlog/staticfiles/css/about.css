@@ -1,0 +1,33 @@
+.about{
+  padding: 2rem 0;
+}
+
+.about-img{
+  width: 400px;
+  height: 400px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 14px;
+
+}
+
+.about-text h2{
+  text-align: center;
+  font-size: 4rem;
+  font-family: Quicksand;
+}
+
+.about-text{
+  margin: 1rem 0;
+  font-family: Quicksand;
+}
+
+.about-text  p{
+  font-size: 20px;
+  padding: 0.6rem 0;
+  line-height: 23px;
+  text-align: justify;
+  font-family: Quicksand;
+  letter-spacing: 1.5px;
+}

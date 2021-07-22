@@ -1,0 +1,17 @@
+h1 {
+  margin-left: 75px;
+
+}
+
+
+.post-form{
+  margin-top: 60px;
+  margin-left: 75px;
+
+}
+
+
+.post-form, button{
+  font-family: Quicksand;
+  font-size: 30px;
+}

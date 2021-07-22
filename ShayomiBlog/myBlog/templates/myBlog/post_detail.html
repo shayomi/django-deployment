@@ -1,0 +1,104 @@
+{% extends 'myBlog/base.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Quicksand:wght@300;500;600;700&family=Slabo+27px&family=Yellowtail&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body_block %}
+<div class="bodycontent">
+
+<div class="container">
+  <div class="post-detail">
+    <h1 class= "posttitle-loader">{{post.title}}</h1>
+    {% if post.post_image %}
+      <img src= "{{ post.post_image.url }}" >
+      <br/>
+    {% endif %}
+
+
+    {% if post.published_date %}
+      <div class="date-postdate">
+        {{post.published_date}}
+      </div>
+
+    {% else %}
+      <a class="btn btn-primary" href="{% url 'post_publish' pk=post.pk%}">Publish</a>
+    {% endif %}
+
+    <p class="postcontent">{{post.text|safe|linebreaksbr}}</p>
+
+    {% if user.is_authenticated %}
+      <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk%}"></a>
+        <span class = 'glyphicon glyphicon-pencil'></span>
+      <a class="btn btn-primary" href="{% url 'post_remove' pk=post.pk%}"></a>
+        <span class = 'glyphicon glyphicon-remove'></span>
+    {% endif %}
+
+    <hr>
+    <a  class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+
+      <div class="container">
+        <h2 class="comment-title">Comments</h2>
+        {% for comment in post.comments.all %}
+        <br>
+
+        <div class="comment-details">
+          <p>{{comment.text|safe|linebreaksbr}}</p>
+            {{comment.created_date}}
+          <p>Posted By: {{comment.author}}</p>
+        </div>
+
+        {% if user.is_authenticated %}
+          <a class="btn btn-primary" href="{% url 'comment_remove' pk=comment.pk%}"></a>
+            <span class = 'glyphicon glyphicon-remove'></span>
+        {% endif %}
+
+
+          {% empty %}
+            <p>No Comment</p>
+      {% endfor %}
+      </div>
+
+
+  </div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCtTZuuYMhq8t-WdSRrK6FpCvgDGSbAo88",
+    authDomain: "legionblog.firebaseapp.com",
+    projectId: "legionblog",
+    storageBucket: "legionblog.appspot.com",
+    messagingSenderId: "525196528525",
+    appId: "1:525196528525:web:26834dd2c5de3604f68bc4",
+    measurementId: "G-0BKN0TCVZZ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+
+
+
+{% endblock %}

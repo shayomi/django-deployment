@@ -1,0 +1,59 @@
+{% extends 'myBlog/base.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Quicksand:wght@300;500;600;700&family=Slabo+27px&family=Yellowtail&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+   <!-- Bootstrap core CSS -->
+   <link href="{% static 'css0/bootstrap.min.css' %}" rel="stylesheet">
+   <!-- Material Design Bootstrap -->
+   <link href="{% static 'css0/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+   <link href="{% static 'css0/style.min.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Quicksand:wght@300;500;600;700&family=Slabo+27px&family=Yellowtail&display=swap" rel="stylesheet">
+
+
+{% endblock %}
+
+{% block body_block %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+<div class="contact" >
+    <div class="jumbotron col-lg-12 col-md-12 col-sm-12 col-xs-12" style=" width:1200; text-align:justify;" >
+      <div class="container">
+          <h4>CONTACT US</h4>
+
+
+          <p stye="font-family:quicksand; text-align:justify;">
+            Email us for any enquires or call 09034970469. We would be happy to
+            to answer your questions and set up a meeting with you.You can also use any of our social links to get through to us
+            Legion Art offers the best art services in Africa
+          </p>
+
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="contact-form col-lg-12 col-md-12 col-sm-6 col-xs-6" style="width:1200px; margin-left:80px; margin-bottom:200px;">
+      <form name="EmailForm" action="mailto:steve.legion94@gmail.com" method="post" enctype="multipart/form-data">
+
+          <li >
+            <input type="submit" class="btn btn-lg btn-success" value="Send us an email">
+          </li>
+
+
+      </form>
+
+    </div>
+    </div>
+
+
+
+
+
+{% endblock %}

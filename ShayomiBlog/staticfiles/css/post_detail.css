@@ -1,0 +1,53 @@
+
+h1{
+  font-family: yellowtail;
+  font-size: 40px;
+  letter-spacing: 3px;
+  text-transform: capitalize;
+  padding-top: 10px;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+
+.date-postdate{
+  margin-bottom: 10px;
+  color: blue;
+  font-family: Quicksand;
+  font-size:15px;
+}
+
+.post-author, p{
+  margin-bottom: 10px;
+  color: blue;
+  font-family: Quicksand;
+  font-size:15px;
+}
+
+.postcontent{
+  font-family: Quicksand;
+  letter-spacing: 1px;
+  font-size: 17px;
+  text-align: justify;
+  padding-bottom: 2px;
+  line-height: 27px;
+  color: black;
+}
+
+.btn{
+  margin-top: 7px;
+}
+
+.glyphicon{
+  margin-top: 15px;
+}
+
+.comment-title h2{
+  font-family: Slabo;
+  font-size: 30px;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.comment-details{
+  color: blue;
+}

@@ -1,0 +1,175 @@
+  <!DOCTYPE html>
+  {% load static %}
+   <html lang="en" dir="ltr">
+
+     <head>
+       <meta charset="utf-8">
+       <title>Base</title>
+
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+       <!-- Latest compiled and minified java script -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
+      <script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
+      <link rel="stylesheet" href="{% static 'css/myBlog.css' %}">
+       <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+       <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+       <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Quicksand:wght@300;500;600;700&family=Slabo+27px&family=Yellowtail&display=swap" rel="stylesheet">
+       {% block css %}
+       <link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+        <!-- Font Awesome -->
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+         <!-- Bootstrap core CSS -->
+         <link href="{% static 'css0/bootstrap.min.css' %}" rel="stylesheet">
+         <!-- Material Design Bootstrap -->
+         <link href="{% static 'css0/mdb.min.css' %}" rel="stylesheet">
+          <!-- Your custom styles (optional) -->
+         <link href="{% static 'css0/style.min.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Quicksand:wght@300;500;600;700&family=Slabo+27px&family=Yellowtail&display=swap" rel="stylesheet">
+
+       {% endblock %}
+     </head>
+     <body>
+
+
+         <nav class="navbar fixed-top navbar-expand-lg navbar-light white  scrolling-navbar">
+
+           <div class="container" >
+
+
+              <!-- Brand
+              <a class="navbar-brand waves-effect" href="{% url 'post_list' %}" target="_blank">
+                <strong class="blue-text">The Legion</strong>
+              </a>-->
+
+              <!--Collapse
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">-->
+
+            <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <div class="navbar-nav mr-auto col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left:30px; padding-left:50px;  display:inline;" >
+
+                     <a class="nav-link waves-effect" href="{% url 'post_list' %}">Home </a>
+                     <a class="nav-link waves-effect" href="#" target="_blank">About</a>
+                     <a class="nav-link waves-effect" href="{% url 'contact' %}"target="_blank">Contact</a>
+                   {% if user.is_authenticated %}
+                     <a class="nav-link waves-effect" href="{% url 'post_new' %}" target="_blank">New Blog</a>
+                     <a class="nav-link waves-effect" href="{% url 'logout' %}" target="_blank">Logout</a>
+
+                 <!-- Right -->
+                 {% else %}
+                     <a href="{% url 'login' %}"class="nav-link waves-effect">Login(Admins Only ) </a>
+                 {% endif %}
+                </div>
+               </div>
+             </div>
+
+
+          </nav>
+
+
+         <div class="banner">
+           <div class="container" style="margin-top:100px;">
+             <h1 class="banner-content-title" style="text-align:center; color:#FF6347; font-family:yellowtail; font-weight:bolder; font-size:70px; padding-bottom:7px; ">
+                The Legion
+             </h1>
+             <h3 class = "banner-content-subtitle" style="text-align:center; color:black; font-size:20px; font-family:Quicksand; margin-bottom:40px;">
+               Art has its own gist
+             </h3>
+           </div>
+         </div>
+       </header>
+
+
+       {% block body_block %}
+
+       {% endblock %}
+
+
+    <!-- footer -->
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+      <footer>
+
+        <div class="social-links col-lg-12 col-md-12 col-sm-6 col-xs-6" style="display:inline-block;  color:#FF6347;" >
+
+
+              <a href="https://www.facebook.com/steve.xtacy" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+
+
+              <a href="https://www.twitter.com/shayomiiiii" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-twitter"></i>
+
+
+              <a href="https://www.instagram.com/shayomiiiii/" class="nav-link  waves-effect"
+                target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+
+              <a href="https://www.linkedin.com/in/sayo-adegoroye-41b28064" class="nav-link  waves-effect"
+                target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+
+        </div>
+        <br>
+        <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+          <p style=" color:#FF6347;">The Legion 2020</p>
+        </div>
+
+    </footer>
+</div>
+</div>
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="js0/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js0/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js0/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js0/mdb.min.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+  // Animations initialization
+  new WOW().init();
+
+</script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+<script>
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+apiKey: "AIzaSyCtTZuuYMhq8t-WdSRrK6FpCvgDGSbAo88",
+authDomain: "legionblog.firebaseapp.com",
+projectId: "legionblog",
+storageBucket: "legionblog.appspot.com",
+messagingSenderId: "525196528525",
+appId: "1:525196528525:web:26834dd2c5de3604f68bc4",
+measurementId: "G-0BKN0TCVZZ"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+</script>
+     </body>
+  </html>

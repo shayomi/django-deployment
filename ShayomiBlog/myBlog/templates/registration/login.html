@@ -1,0 +1,31 @@
+{% extends 'myBlog/base.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Quicksand:wght@300;500;600;700&family=Slabo+27px&family=Yellowtail&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+  <h2> Please Login </h2>
+  <h3> (Must be a SuperUser, Please check with the site admin) </h3>
+
+  {% if form.errors %}
+    <p> Your Username and Password didnt match: Please try again </p>
+  {% endif %}
+
+  <form  action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" class = 'btn btn-primary'  value="Login">
+    <input type="hidden" name="next" value="{{next}}">
+
+  </form>
+
+</div>
+
+
+{% endblock %}

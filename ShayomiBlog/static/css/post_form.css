@@ -1,0 +1,17 @@
+h1 {
+  margin-left: 75px;
+
+}
+
+
+.create_new_blog{
+  margin-top: 60px;
+  margin-left: 75px;
+
+}
+
+
+.create_new_blog, button{
+  font-family: Quicksand;
+  font-size: 30px;
+}
