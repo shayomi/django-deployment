@@ -1,4 +1,5 @@
-# django-deployment
+# Shayomi Blog
+
 This blog was created using Django framework. Here the frontend is determined by the backend because
 we are not installing djangorestframework.
 There are few limitations to using djangoframework without djangoRestframework
